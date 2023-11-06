@@ -1,0 +1,79 @@
+[
+ {
+  "rank": 0,
+  "mana": 0,
+  "power": 0,
+  "sockets": 0,
+  "count": 0
+ },
+ {
+  "rank": 1,
+  "mana": 1,
+  "power": 2,
+  "sockets": 1,
+  "count": 21
+ },
+ {
+  "rank": 2,
+  "mana": 2,
+  "power": 4,
+  "sockets": 1,
+  "count": 13
+ },
+ {
+  "rank": 3,
+  "mana": 3,
+  "power": 6,
+  "sockets": 1.5,
+  "count": 8
+ },
+ {
+  "rank": 4,
+  "mana": 4,
+  "power": 8,
+  "sockets": 2,
+  "count": 5
+ },
+ {
+  "rank": 5,
+  "mana": 5,
+  "power": 15,
+  "sockets": 2.5,
+  "count": 3
+ },
+ {
+  "rank": 6,
+  "mana": 6,
+  "power": 18,
+  "sockets": 3,
+  "count": 2
+ },
+ {
+  "rank": 7,
+  "mana": 7,
+  "power": 21,
+  "sockets": 3.5,
+  "count": 1
+ },
+ {
+  "rank": 8,
+  "mana": 8,
+  "power": 32,
+  "sockets": 4,
+  "count": 0
+ },
+ {
+  "rank": 9,
+  "mana": 9,
+  "power": 36,
+  "sockets": 4.5,
+  "count": 0
+ },
+ {
+  "rank": 10,
+  "mana": 10,
+  "power": 50,
+  "sockets": 5,
+  "count": 0
+ }
+]

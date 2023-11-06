@@ -16,6 +16,7 @@ func init_sanctuaries() -> void:
 	for _i in 1:
 		var input = {}
 		input.wilderness = self
+		input.temples = [world.mountains.temples.get_child(0), world.mountains.temples.get_child(1)]
 	
 		var sanctuary = Global.scene.sanctuary.instantiate()
 		sanctuaries.add_child(sanctuary)

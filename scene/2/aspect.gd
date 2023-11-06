@@ -17,7 +17,7 @@ func set_attributes(input_: Dictionary) -> void:
 	input_.subtype = input_.value
 	stack.set_attributes(input_)
 	stack.custom_minimum_size = Vector2(Global.vec.size.aspect)
-	custom_minimum_size = Vector2(Global.vec.size.aspect)
+	#custom_minimum_size = Vector2(Global.vec.size.aspect)
 
 
 func hide_icons() -> void:

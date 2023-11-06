@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3u3rfnlltnxm"]
+[gd_scene load_steps=5 format=3 uid="uid://c3u3rfnlltnxm"]
 
 [ext_resource type="Script" path="res://scene/2/temple.gd" id="1_2hfp7"]
+[ext_resource type="PackedScene" uid="uid://cdhigufpmlbmm" path="res://scene/2/fountain.tscn" id="2_02g50"]
+[ext_resource type="PackedScene" uid="uid://b1qv3awd6y1ri" path="res://scene/2/rector.tscn" id="3_joh5v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
 
@@ -26,6 +28,17 @@ visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 
-[node name="Cultivators" type="VBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
 alignment = 1
+
+[node name="Cultivators" type="VBoxContainer" parent="HBox"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Fountain" parent="HBox" instance=ExtResource("2_02g50")]
+layout_mode = 2
+
+[node name="Rector" parent="HBox" instance=ExtResource("3_joh5v")]
+layout_mode = 2
