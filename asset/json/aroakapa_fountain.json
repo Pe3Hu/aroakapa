@@ -1,7 +1,7 @@
 [
  {
   "round": 1,
-  "mana": 5,
+  "mana": 10,
   "rank 1": 50,
   "rank 2": 30,
   "rank 3": 20,
@@ -15,7 +15,7 @@
  },
  {
   "round": 2,
-  "mana": 10,
+  "mana": 20,
   "rank 1": 0,
   "rank 2": 0,
   "rank 3": 50,
@@ -29,7 +29,7 @@
  },
  {
   "round": 3,
-  "mana": 15,
+  "mana": 30,
   "rank 1": 0,
   "rank 2": 0,
   "rank 3": 0,
@@ -43,7 +43,7 @@
  },
  {
   "round": 4,
-  "mana": 25,
+  "mana": 40,
   "rank 1": 0,
   "rank 2": 0,
   "rank 3": 0,
@@ -57,7 +57,7 @@
  },
  {
   "round": 5,
-  "mana": 40,
+  "mana": 50,
   "rank 1": 0,
   "rank 2": 0,
   "rank 3": 0,

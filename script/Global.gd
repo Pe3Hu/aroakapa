@@ -39,6 +39,7 @@ func init_dict() -> void:
 	init_shrine()
 	init_temple()
 	init_fountain()
+	init_mindset()
 
 
 func init_neighbor() -> void:
@@ -140,13 +141,45 @@ func init_fountain() -> void:
 		dict.fountain.round[int(fountain.round)] = data
 
 
+func init_mindset() -> void:
+	dict.priority = {}
+	dict.priority.weight = {}
+	dict.priority.weight["disregard"] = 1
+	dict.priority.weight["balance"] = 3
+	dict.priority.weight["domination"] = 6
+	
+	dict.mindset = {}
+	dict.mindset.title = {}
+	
+	var path = "res://asset/json/aroakapa_mindset.json"
+	var array = load_data(path)
+	
+	for mindset in array:
+		var data = {}
+		data.parts = 0
+		data.priorities = {}
+		
+		for key in mindset:
+			if key != "title":
+				var words = key.split(" ")
+				
+				if !data.priorities.has(words[0]):
+					data.priorities[words[0]] = {}
+				
+				data.priorities[words[0]][int(words[1])] = mindset[key]
+				data.parts += dict.priority.weight[mindset[key]]
+		
+		dict.mindset.title[mindset.title] = data
+	
+
+
 func init_node() -> void:
 	node.game = get_node("/root/Game")
 
 
 func init_scene() -> void:
 	scene.temple = load("res://scene/2/temple.tscn")
-	scene.cultivator = load("res://scene/2/cultivator.tscn")
+	scene.mage = load("res://scene/2/mage.tscn")
 	scene.aspect = load("res://scene/2/aspect.tscn")
 	
 	scene.sanctuary = load("res://scene/3/sanctuary.tscn")

@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdhigufpmlbmm"]
+[gd_scene load_steps=4 format=3 uid="uid://bjohs3xf26e7h"]
 
-[ext_resource type="Script" path="res://scene/2/fountain.gd" id="1_yb26r"]
+[ext_resource type="Script" path="res://scene/3/equilibrium.gd" id="1_q1ysf"]
+[ext_resource type="PackedScene" uid="uid://ciw38iqel0v5a" path="res://scene/0/icon.tscn" id="2_5n8pi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
-bg_color = Color(0.968627, 0.917647, 0.321569, 1)
 
-[node name="Fountain" type="MarginContainer"]
+[node name="Equilibrium" type="MarginContainer"]
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,13 +20,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_yb26r")
+script = ExtResource("1_q1ysf")
 
 [node name="BG" type="Panel" parent="."]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 
-[node name="Mages" type="HBoxContainer" parent="."]
+[node name="Title" parent="." instance=ExtResource("2_5n8pi")]
 layout_mode = 2
-theme_override_constants/separation = 5
-alignment = 1
+
+[node name="Stack" parent="." instance=ExtResource("2_5n8pi")]
+layout_mode = 2

@@ -12,12 +12,12 @@ func set_attributes(input_: Dictionary) -> void:
 	wilderness = input_.wilderness
 	mountains = wilderness.world.mountains
 	
+	init_shrines()
+	
 	for temple in input_.temples:
 		add_temple(temple)
 	
-	init_shrines()
 	phase_0()
-	
 
 
 func init_shrines() -> void:
@@ -33,9 +33,23 @@ func init_shrines() -> void:
 func add_temple(temple_: MarginContainer) -> void:
 	mountains.temples.remove_child(temple_)
 	temples.add_child(temple_)
+	temple_.rector.sanctuary = self
+	
+	var description = Global.dict.mindset.title[temple_.rector.mindset]
+	var priorities = {}
+	
+	for type in description.priorities:
+		priorities[type] = []
+		
+		for index in description.priorities[type]:
+			priorities[type].append(description.priorities[type][index])
+	
+	for shrine in shrines.get_children():
+		shrine.priorities[temple_.rector] = priorities[shrine.type].pop_front()
+		shrine.add_formation(temple_)
 
 
 func phase_0() -> void:
 	for temple in temples.get_children():
-		temple.fountain.cultivators_reenrollment()
+		temple.fountain.mages_reenrollment()
 		temple.rector.prepare_distributions()

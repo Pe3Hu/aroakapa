@@ -1,7 +1,7 @@
 extends MarginContainer
 
 
-@onready var cultivators = $Cultivators
+@onready var mages = $Mages
 
 var temple = null
 var count = 6
@@ -24,19 +24,21 @@ func set_next_round() -> void:
 	mana = Global.dict.fountain.round[round].mana
 
 
-func expel_all_cultivators() -> void:
-	while cultivators.get_child_count() > 0:
-		var cultivator = cultivators.get_child(0)
-		cultivators.remove_child(cultivator)
-		temple.cultivators.add_child(cultivator)
+func expel_all_mages() -> void:
+	while mages.get_child_count() > 0:
+		var mage = mages.get_child(0)
+		mages.remove_child(mage)
+		temple.mages.add_child(mage)
 
 
-func cultivators_reenrollment() -> void:
-	while cultivators.get_child_count() < count:
+func mages_reenrollment() -> void:
+	while mages.get_child_count() < count:
 		var rank = get_random_rank_based_on_current_round()
-		var cultivator = get_random_cultivator_based_on_rank(rank)
-		temple.cultivators.remove_child(cultivator)
-		cultivators.add_child(cultivator)
+		var mage = get_random_mage_based_on_rank(rank)
+		temple.mages.remove_child(mage)
+		mages.add_child(mage)
+	
+	sort_based_on_rank()
 
 
 func get_random_rank_based_on_current_round() -> int:
@@ -45,22 +47,36 @@ func get_random_rank_based_on_current_round() -> int:
 	return rank
 
 
-func get_random_cultivator_based_on_rank(rank_: int) -> Variant:
+func get_random_mage_based_on_rank(rank_: int) -> Variant:
 	if rank_ > 0:
 		var options = []
 		
-		for cultivator in temple.cultivators.get_children():
-			if cultivator.rank == rank_:
-				options.append(cultivator)
+		for mage in temple.mages.get_children():
+			if mage.rank == rank_:
+				options.append(mage)
 		
-		var cultivator = null
+		var mage = null
 		
 		if !options.is_empty():
-			cultivator = options.pick_random()
+			mage = options.pick_random()
 		else:
-			cultivator = get_random_cultivator_based_on_rank(rank_ - 1)
+			mage = get_random_mage_based_on_rank(rank_ - 1)
 		
-		return  cultivator
+		return  mage
 	
-	print("error: unsuitable cultivators")
+	print("error: unsuitable mages")
 	return null
+
+
+func sort_based_on_rank() -> void:
+	var mages_ = []
+	
+	while mages.get_child_count() > 0:
+		var mage = mages.get_child(0)
+		mages.remove_child(mage)
+		mages_.append(mage)
+	
+	mages_.sort_custom(func(a, b): return a.rank < b.rank)
+	
+	for mage in mages_:
+		mages.add_child(mage)

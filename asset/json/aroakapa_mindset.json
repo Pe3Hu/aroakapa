@@ -1,0 +1,66 @@
+[
+ {
+  "title": "falcon",
+  "inferior 0": "disregard",
+  "interim 0": "domination",
+  "inheritor 0": "domination",
+  "interim 1": "balance",
+  "inferior 1": "disregard"
+ },
+ {
+  "title": "swan",
+  "inferior 0": "disregard",
+  "interim 0": "domination",
+  "inheritor 0": "balance",
+  "interim 1": "domination",
+  "inferior 1": "disregard"
+ },
+ {
+  "title": "vulture",
+  "inferior 0": "domination",
+  "interim 0": "balance",
+  "inheritor 0": "balance",
+  "interim 1": "disregard",
+  "inferior 1": "domination"
+ },
+ {
+  "title": "sparrow",
+  "inferior 0": "balance",
+  "interim 0": "balance",
+  "inheritor 0": "balance",
+  "interim 1": "balance",
+  "inferior 1": "balance"
+ },
+ {
+  "title": "crow",
+  "inferior 0": "domination",
+  "interim 0": "balance",
+  "inheritor 0": "domination",
+  "interim 1": "balance",
+  "inferior 1": "disregard"
+ },
+ {
+  "title": "eagle",
+  "inferior 0": "disregard",
+  "interim 0": "domination",
+  "inheritor 0": "domination",
+  "interim 1": "domination",
+  "inferior 1": "disregard"
+ },
+ {
+  "title": "pelican",
+  "inferior 0": "domination",
+  "interim 0": "disregard",
+  "inheritor 0": "domination",
+  "interim 1": "disregard",
+  "inferior 1": "domination"
+ },
+ {
+  "title": "harpy",
+  "inferior 0": "domination",
+  "interim 0": "domination",
+  "inheritor 0": "domination",
+  "interim 1": "disregard",
+  "inferior 1": "disregard"
+ }
+]

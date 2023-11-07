@@ -32,7 +32,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 layout_mode = 2
 alignment = 1
 
-[node name="Cultivators" type="VBoxContainer" parent="HBox"]
+[node name="Mages" type="VBoxContainer" parent="HBox"]
 visible = false
 layout_mode = 2
 alignment = 1

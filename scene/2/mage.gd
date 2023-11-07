@@ -45,3 +45,7 @@ func get_mana_value() -> int:
 
 func get_power_value() -> int:
 	return power.stack.get_number()
+
+
+func hide_mana() -> void:
+	mana.visible = false

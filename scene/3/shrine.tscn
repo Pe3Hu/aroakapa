@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtpst0xplmg4w"]
+[gd_scene load_steps=5 format=3 uid="uid://dtpst0xplmg4w"]
 
 [ext_resource type="Script" path="res://scene/3/shrine.gd" id="1_fpkio"]
+[ext_resource type="PackedScene" uid="uid://5rrmpav8cop7" path="res://scene/3/formation.tscn" id="2_8ecxe"]
+[ext_resource type="PackedScene" uid="uid://bjohs3xf26e7h" path="res://scene/3/equilibrium.tscn" id="3_v5m6m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
 
@@ -24,3 +26,17 @@ script = ExtResource("1_fpkio")
 [node name="BG" type="Panel" parent="."]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Left" parent="HBox" instance=ExtResource("2_8ecxe")]
+layout_mode = 2
+
+[node name="Equilibrium" parent="HBox" instance=ExtResource("3_v5m6m")]
+layout_mode = 2
+
+[node name="Right" parent="HBox" instance=ExtResource("2_8ecxe")]
+layout_mode = 2

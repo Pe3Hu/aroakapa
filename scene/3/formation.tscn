@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdhigufpmlbmm"]
+[gd_scene load_steps=3 format=3 uid="uid://5rrmpav8cop7"]
 
-[ext_resource type="Script" path="res://scene/2/fountain.gd" id="1_yb26r"]
+[ext_resource type="Script" path="res://scene/3/formation.gd" id="1_gnu82"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
-bg_color = Color(0.968627, 0.917647, 0.321569, 1)
 
-[node name="Fountain" type="MarginContainer"]
+[node name="Formation" type="MarginContainer"]
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,13 +19,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_yb26r")
+script = ExtResource("1_gnu82")
 
 [node name="BG" type="Panel" parent="."]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 
-[node name="Mages" type="HBoxContainer" parent="."]
+[node name="Mages" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 5
 alignment = 1
