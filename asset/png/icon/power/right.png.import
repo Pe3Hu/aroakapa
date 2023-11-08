@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ue2gej43m5ha"
-path="res://.godot/imported/mana.png-4f00ba97faa740ac56231b46e49251ba.ctex"
+uid="uid://8r3ucnu7pfww"
+path="res://.godot/imported/right.png-eccd2ce403e38e286c254920789c6e0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/png/icon/aspect/mana.png"
-dest_files=["res://.godot/imported/mana.png-4f00ba97faa740ac56231b46e49251ba.ctex"]
+source_file="res://asset/png/icon/power/right.png"
+dest_files=["res://.godot/imported/right.png-eccd2ce403e38e286c254920789c6e0a.ctex"]
 
 [params]
 

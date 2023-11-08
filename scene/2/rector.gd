@@ -93,6 +93,8 @@ func get_kits_distribution(kits_: Array) -> Dictionary:
 	var powers = {}
 	
 	distributions[kit] = {}
+	var mages = []
+	mages.append_array(kit)
 	
 	#print(power)
 	for shrine in sanctuary.shrines.get_children():
@@ -103,15 +105,30 @@ func get_kits_distribution(kits_: Array) -> Dictionary:
 		distributions[kit][shrine].power = -powers[shrine]
 		distributions[kit][shrine].mages = [] 
 		#print(powers[shrine])
-	
-	for mage in kit:
-		var shrine = null
+		
+		for mage in mages:
+			if mage.get_power_value() + -powers[shrine] < 0:
+				distributions[kit][shrine].power += mage.get_power_value()
+				distributions[kit][shrine].mages.append(mage)
+				mages.erase(mage)
+				break
+		
+		if distributions[kit][shrine].mages.is_empty():
+			var mage = mages.pop_front()
 			
-		while shrine == null:
-			for shrine_ in distributions[kit]:
-				if distributions[kit][shrine_].power < 0:
-					shrine = shrine_
-					break
+			if mage != null:
+				distributions[kit][shrine].power += mage.get_power_value()
+				distributions[kit][shrine].mages.append(mage)
+	
+	
+	for mage in mages:
+		var shrine = null
+		
+		for shrine_ in distributions[kit]:
+			if distributions[kit][shrine_].power < 0:
+				shrine = shrine_
+				break
+			
 		
 		if shrine != null:
 			distributions[kit][shrine].power += mage.get_power_value()

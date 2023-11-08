@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3u3rfnlltnxm"]
+[gd_scene load_steps=6 format=3 uid="uid://c3u3rfnlltnxm"]
 
 [ext_resource type="Script" path="res://scene/2/temple.gd" id="1_2hfp7"]
 [ext_resource type="PackedScene" uid="uid://cdhigufpmlbmm" path="res://scene/2/fountain.tscn" id="2_02g50"]
+[ext_resource type="PackedScene" uid="uid://jyc08rexs85x" path="res://scene/2/core.tscn" id="2_j0god"]
 [ext_resource type="PackedScene" uid="uid://b1qv3awd6y1ri" path="res://scene/2/rector.tscn" id="3_joh5v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
@@ -32,13 +33,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 layout_mode = 2
 alignment = 1
 
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+
+[node name="Core" parent="HBox/VBox" instance=ExtResource("2_j0god")]
+layout_mode = 2
+
+[node name="Fountain" parent="HBox/VBox" instance=ExtResource("2_02g50")]
+layout_mode = 2
+
 [node name="Mages" type="VBoxContainer" parent="HBox"]
 visible = false
 layout_mode = 2
 alignment = 1
-
-[node name="Fountain" parent="HBox" instance=ExtResource("2_02g50")]
-layout_mode = 2
 
 [node name="Rector" parent="HBox" instance=ExtResource("3_joh5v")]
 layout_mode = 2

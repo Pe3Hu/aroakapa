@@ -47,6 +47,9 @@ func add_temple(temple_: MarginContainer) -> void:
 	for shrine in shrines.get_children():
 		shrine.priorities[temple_.rector] = priorities[shrine.type].pop_front()
 		shrine.add_formation(temple_)
+	
+	var side = shrines.get_child(0).sides[temple_]
+	temple_.fountain.set_side(side)
 
 
 func phase_0() -> void:

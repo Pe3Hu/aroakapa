@@ -57,4 +57,4 @@ func add_mage(mage_: MarginContainer) -> void:
 	mage_.temple.fountain.mages.remove_child(mage_)
 	formation.mages.add_child(mage_)
 	equilibrium.change_temple_power(mage_.temple, mage_.get_power_value())
-	mage_.hide_mana()
+	mage_.update_borders(side)

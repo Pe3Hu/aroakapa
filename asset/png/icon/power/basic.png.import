@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fh2shwvdixuq"
-path="res://.godot/imported/power.png-9fbb465c695a55382e51ccb1bad24b73.ctex"
+uid="uid://dwav07r1wkmxu"
+path="res://.godot/imported/basic.png-087e08bd5d618b3e8a6766801449c1d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/png/icon/aspect/power.png"
-dest_files=["res://.godot/imported/power.png-9fbb465c695a55382e51ccb1bad24b73.ctex"]
+source_file="res://asset/png/icon/power/basic.png"
+dest_files=["res://.godot/imported/basic.png-087e08bd5d618b3e8a6766801449c1d0.ctex"]
 
 [params]
 

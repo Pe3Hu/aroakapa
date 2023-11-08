@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqkwxj63y7lvq"
-path="res://.godot/imported/left.png-12620b31b285bd80ac5dd5ca356e597a.ctex"
+uid="uid://dm0relggoi1ni"
+path="res://.godot/imported/left.png-ecb449c66ff33564a93ba8b17e16a4b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/png/icon/equilibrium/left.png"
-dest_files=["res://.godot/imported/left.png-12620b31b285bd80ac5dd5ca356e597a.ctex"]
+source_file="res://asset/png/icon/power/left.png"
+dest_files=["res://.godot/imported/left.png-ecb449c66ff33564a93ba8b17e16a4b6.ctex"]
 
 [params]
 

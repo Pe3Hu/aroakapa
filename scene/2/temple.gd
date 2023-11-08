@@ -1,8 +1,9 @@
 extends MarginContainer
 
 
+@onready var fountain = $HBox/VBox/Fountain
+@onready var core = $HBox/VBox/Core
 @onready var mages = $HBox/Mages
-@onready var fountain = $HBox/Fountain
 @onready var rector = $HBox/Rector
 
 var mountains = null
@@ -17,6 +18,7 @@ func set_attributes(input_: Dictionary) -> void:
 	input.temple = self
 	fountain.set_attributes(input)
 	rector.set_attributes(input)
+	core.set_attributes(input)
 
 
 func init_mages() -> void:

@@ -1,18 +1,27 @@
 extends MarginContainer
 
 
+@onready var bg = $BG
 @onready var mages = $Mages
 
 var temple = null
 var count = 6
 var round = null
 var mana = null
+var side = null
 
 
 func set_attributes(input_: Dictionary) -> void:
 	temple = input_.temple
 	
 	set_next_round()
+
+
+func set_side(side_: String) -> void:
+	side = side_
+	var style = StyleBoxFlat.new()
+	bg.set("theme_override_styles/panel", style)
+	style.bg_color = Global.color.side[side]
 
 
 func set_next_round() -> void:

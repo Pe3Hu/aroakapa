@@ -23,11 +23,11 @@ func init_aspects() -> void:
 	for subtype in Global.arr.aspect:
 		var input = {}
 		input.cultivator = self
-		input.type = "aspect"
-		input.subtype = subtype
+		input.type = subtype
+		input.subtype = "basic"
 		input.value = description[subtype]
 		
-		var aspect = get(input.subtype)
+		var aspect = get(input.type)
 		aspect.set_attributes(input)
 		#aspect.hide_icons()
 	
@@ -47,5 +47,9 @@ func get_power_value() -> int:
 	return power.stack.get_number()
 
 
-func hide_mana() -> void:
+func update_borders(side_: String) -> void:
+	var input = {}
+	input.type = "power"
+	input.subtype = side_
+	power.title.set_attributes(input)
 	mana.visible = false

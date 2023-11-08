@@ -37,11 +37,11 @@ func update_equilibrium() -> void:
 	
 	if powers.left == powers.right:
 		input.subtype = "equal"
-	
-	if powers.left > powers.right:
-		input.subtype = "left"
 	else:
-		input.subtype = "right"
+		if powers.left > powers.right:
+			input.subtype = "left"
+		else:
+			input.subtype = "right"
 	
 	title.set_attributes(input)
 	

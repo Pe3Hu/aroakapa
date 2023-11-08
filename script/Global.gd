@@ -197,6 +197,7 @@ func init_vec():
 	
 	vec.size.aspect = Vector2(32, 32)
 	vec.size.shrine = Vector2(100, 100)
+	vec.size.bar = Vector2(120, 12)
 	
 	init_window_size()
 
@@ -210,11 +211,25 @@ func init_window_size():
 
 func init_color():
 	var h = 360.0
+	color.indicator = {}
+	color.indicator.health = {}
+	color.indicator.health.fill = Color.from_hsv(0, 1, 0.9)
+	color.indicator.health.background = Color.from_hsv(0, 0.25, 0.9)
+	color.indicator.endurance = {}
+	color.indicator.endurance.fill = Color.from_hsv(0.33, 1, 0.9)
+	color.indicator.endurance.background = Color.from_hsv(0.33, 0.25, 0.9)
+	color.indicator.barrier = {}
+	color.indicator.barrier.fill = Color.from_hsv(0.5, 1, 0.9)
+	color.indicator.barrier.background = Color.from_hsv(0.5, 0.25, 0.9)
 	
 	color.shrine = {}
-	color.shrine.inferior = Color.from_hsv(160 / h, 0.6, 0.7)
-	color.shrine.interim = Color.from_hsv(220 / h, 0.5, 0.8)
-	color.shrine.inheritor = Color.from_hsv(0 / h, 0.4, 0.9)
+	color.shrine.inferior = Color.from_hsv(180 / h, 0.9, 0.7)
+	color.shrine.interim = Color.from_hsv(210 / h, 0.8, 0.8)
+	color.shrine.inheritor = Color.from_hsv(240 / h, 0.7, 0.9)
+	
+	color.side = {}
+	color.side.left = Color.from_hsv(110 / h, 0.6, 0.9)
+	color.side.right = Color.from_hsv(290 / h, 0.6, 0.9)
 	
 
 
