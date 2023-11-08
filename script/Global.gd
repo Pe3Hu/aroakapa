@@ -99,6 +99,11 @@ func init_shrine() -> void:
 	dict.shrine[2] = {}
 	dict.shrine[2].title = "inferior"
 	dict.shrine[2].multiplier = 2
+	
+	dict.side = {}
+	dict.side.opposite = {}
+	dict.side.opposite["left"] = "right"
+	dict.side.opposite["right"] = "left"
 
 
 func init_temple() -> void:

@@ -18,3 +18,5 @@ res://scene/2/core.tscn
 res://scene/2/core.gd
 res://scene/2/temple.gd
 res://scene/2/indicator.gd
+res://scene/0/game.tscn
+res://scene/0/game.gd

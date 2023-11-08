@@ -6,6 +6,8 @@ extends MarginContainer
 
 var wilderness = null
 var mountains = null
+var winner = null
+var end = false
 
 
 func set_attributes(input_: Dictionary) -> void:
@@ -18,6 +20,8 @@ func set_attributes(input_: Dictionary) -> void:
 		add_temple(temple)
 	
 	phase_0()
+	for _i in 100:
+		phase_1()
 
 
 func init_shrines() -> void:
@@ -33,7 +37,8 @@ func init_shrines() -> void:
 func add_temple(temple_: MarginContainer) -> void:
 	mountains.temples.remove_child(temple_)
 	temples.add_child(temple_)
-	temple_.rector.sanctuary = self
+	temple_.sanctuary = self
+	#temple_.rector.sanctuary = self
 	
 	var description = Global.dict.mindset.title[temple_.rector.mindset]
 	var priorities = {}
@@ -56,3 +61,9 @@ func phase_0() -> void:
 	for temple in temples.get_children():
 		temple.fountain.mages_reenrollment()
 		temple.rector.prepare_distributions()
+
+
+func phase_1() -> void:
+	if !end:
+		for shrine in shrines.get_children():
+			shrine.eruption()

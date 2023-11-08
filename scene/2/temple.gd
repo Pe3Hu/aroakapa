@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var rector = $HBox/Rector
 
 var mountains = null
+var sanctuary = null
 
 
 func set_attributes(input_: Dictionary) -> void:

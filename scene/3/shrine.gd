@@ -58,3 +58,20 @@ func add_mage(mage_: MarginContainer) -> void:
 	formation.mages.add_child(mage_)
 	equilibrium.change_temple_power(mage_.temple, mage_.get_power_value())
 	mage_.update_borders(side)
+
+
+func eruption() -> void:
+	var side = equilibrium.title.subtype
+	
+	if side != "equal":
+		var victum = get_temple_based_on_side(Global.dict.side.opposite[side])
+		var value = -equilibrium.stack.get_number()
+		victum.core.health.update_value("current", value)
+
+
+func get_temple_based_on_side(side_: String) -> Variant:
+	for temple in sides:
+		if sides[temple] == side_:
+			return temple
+	
+	return null

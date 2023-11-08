@@ -4,7 +4,6 @@ extends MarginContainer
 var temple = null
 var fountain = null
 var mindset = null
-var sanctuary = null
 
 
 func set_attributes(input_: Dictionary) -> void:
@@ -97,7 +96,7 @@ func get_kits_distribution(kits_: Array) -> Dictionary:
 	mages.append_array(kit)
 	
 	#print(power)
-	for shrine in sanctuary.shrines.get_children():
+	for shrine in temple.sanctuary.shrines.get_children():
 		var priority = shrine.priorities[self]
 		var part = float(Global.dict.priority.weight[priority]) / parts
 		powers[shrine] = floor(part * power)
