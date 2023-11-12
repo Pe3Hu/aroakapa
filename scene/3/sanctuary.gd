@@ -19,8 +19,8 @@ func set_attributes(input_: Dictionary) -> void:
 	for temple in input_.temples:
 		add_temple(temple)
 	
-	phase_0()
 	for _i in 100:
+		phase_0()
 		phase_1()
 
 
@@ -59,6 +59,7 @@ func add_temple(temple_: MarginContainer) -> void:
 
 func phase_0() -> void:
 	for temple in temples.get_children():
+		temple.fountain.set_next_round()
 		temple.fountain.mages_reenrollment()
 		temple.rector.prepare_distributions()
 

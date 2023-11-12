@@ -65,7 +65,7 @@ func eruption() -> void:
 	
 	if side != "equal":
 		var victum = get_temple_based_on_side(Global.dict.side.opposite[side])
-		var value = -equilibrium.stack.get_number()
+		var value = -equilibrium.stack.get_number() * multiplier
 		victum.core.health.update_value("current", value)
 
 

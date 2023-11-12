@@ -13,8 +13,6 @@ var side = null
 
 func set_attributes(input_: Dictionary) -> void:
 	temple = input_.temple
-	
-	set_next_round()
 
 
 func set_side(side_: String) -> void:
@@ -30,7 +28,10 @@ func set_next_round() -> void:
 	else:
 		round += 1
 	
-	mana = Global.dict.fountain.round[round].mana
+	if round < 6:
+		mana = Global.dict.fountain.round[round].mana
+	else:
+		mana = 0
 
 
 func expel_all_mages() -> void:
@@ -41,13 +42,16 @@ func expel_all_mages() -> void:
 
 
 func mages_reenrollment() -> void:
-	while mages.get_child_count() < count:
-		var rank = get_random_rank_based_on_current_round()
-		var mage = get_random_mage_based_on_rank(rank)
-		temple.mages.remove_child(mage)
-		mages.add_child(mage)
+	expel_all_mages()
 	
-	sort_based_on_rank()
+	if round < 6:
+		while mages.get_child_count() < count:
+			var rank = get_random_rank_based_on_current_round()
+			var mage = get_random_mage_based_on_rank(rank)
+			temple.mages.remove_child(mage)
+			mages.add_child(mage)
+		
+		sort_based_on_rank()
 
 
 func get_random_rank_based_on_current_round() -> int:

@@ -190,7 +190,6 @@ func init_scene() -> void:
 	scene.sanctuary = load("res://scene/3/sanctuary.tscn")
 	scene.shrine = load("res://scene/3/shrine.tscn")
 	
-	get_all_constituents([1,2,3,4,5])
 	pass
 
 

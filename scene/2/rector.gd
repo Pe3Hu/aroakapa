@@ -15,16 +15,18 @@ func set_attributes(input_: Dictionary) -> void:
 
 func prepare_distributions() -> Dictionary:
 	var distributions = {}
-	var all_kits = prepare_all_kits()
-	var best_kits = get_best_kits(all_kits)
-	var kit = best_kits.front()
-	var kits_distributions = get_kits_distribution(best_kits)
-	apply_distribution(kits_distributions[best_kits.front()])
 	
-	print("___", best_kits.size())
-	for mage in kit:
-		print([mage.get_index(), mage.get_mana_value(), mage.get_power_value()])
-	
+	if fountain.round < 6:
+		var all_kits = prepare_all_kits()
+		var best_kits = get_best_kits(all_kits)
+		var kit = best_kits.front()
+		var kits_distributions = get_kits_distribution(best_kits)
+		apply_distribution(kits_distributions[best_kits.front()])
+		
+		print("___", best_kits.size())
+		for mage in kit:
+			print([mage.get_index(), mage.get_mana_value(), mage.get_power_value()])
+		
 	return distributions
 
 
